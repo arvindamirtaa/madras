@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f8f7f3">
+    <title>madras — Food in Chennai</title>
+    <meta name="description" content="A simple directory of restaurants, cafés, bakeries and sweet shops in Chennai. Find a place by name, neighbourhood or food.">
+    <meta property="og:title" content="madras — Food in Chennai">
+    <meta property="og:description" content="A small, growing directory of Chennai's food establishments.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://arvindamirtaa.github.io/madras/">
+    <link rel="icon" href="./favicon.svg" type="image/svg+xml">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./styles.css">
+    <script src="./places.js" defer></script>
+    <script src="./app.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#directory">Skip to directory</a>
+    <div class="page">
+      <header class="site-header">
+        <a class="wordmark" href="./" aria-label="madras home">madras<span aria-hidden="true">.</span></a>
+        <span class="city-label">Chennai, Tamil Nadu</span>
+      </header>
+
+      <main>
+        <section class="intro" aria-labelledby="page-title">
+          <p class="eyebrow">The food directory</p>
+          <h1 id="page-title">Food in Chennai.</h1>
+          <p class="intro-copy">Restaurants, cafés, bakeries and sweet shops.<br>Find a place for your next meal.</p>
+        </section>
+
+        <section id="directory" aria-label="Food directory">
+          <form class="search-form" role="search">
+            <div class="search-field">
+              <label for="search">Search the directory</label>
+              <input id="search" type="search" placeholder="Name, neighbourhood or food" autocomplete="off">
+            </div>
+            <div class="area-field">
+              <label for="neighbourhood">Neighbourhood</label>
+              <select id="neighbourhood">
+                <option value="">All neighbourhoods</option>
+              </select>
+            </div>
+          </form>
+
+          <fieldset class="categories">
+            <legend class="visually-hidden">Establishment type</legend>
+            <button type="button" class="category" data-category="" aria-pressed="true">All places</button>
+            <button type="button" class="category" data-category="Restaurant" aria-pressed="false">Restaurants</button>
+            <button type="button" class="category" data-category="Café" aria-pressed="false">Cafés</button>
+            <button type="button" class="category" data-category="Sweets & bakery" aria-pressed="false">Sweets & bakeries</button>
+          </fieldset>
+
+          <div class="results-bar">
+            <p id="result-count" role="status" aria-live="polite" aria-atomic="true"></p>
+            <button id="clear-filters" class="text-button" type="button" hidden>Clear filters</button>
+          </div>
+
+          <ul id="places" class="places" aria-label="Establishments"></ul>
+          <div id="empty-state" class="empty-state" hidden>
+            <h2>No places found.</h2>
+            <p>Try another search or clear your filters.</p>
+            <button id="reset-search" class="reset-button" type="button">Show all places</button>
+          </div>
+          <noscript>
+            <p>Enable JavaScript to browse and search this directory, or <a href="https://github.com/arvindamirtaa/madras/blob/main/places.js">read the full list on GitHub</a>.</p>
+          </noscript>
+        </section>
+      </main>
+
+      <footer class="site-footer">
+        <div>
+          <p>A small, growing list.</p>
+          <p class="footer-note">Visit establishment websites for current menus and hours.</p>
+        </div>
+        <a href="https://github.com/arvindamirtaa/madras/issues/new?title=Suggest%20a%20place&amp;body=Name%3A%0ANeighbourhood%3A%0AAddress%3A%0AWebsite%20or%20source%3A" target="_blank" rel="noopener noreferrer">Suggest a place <span aria-hidden="true">↗</span></a>
+      </footer>
+    </div>
+  </body>
+</html>
