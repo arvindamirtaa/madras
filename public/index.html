@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#fff8eb">
+    <title>madras — Food in Chennai</title>
+    <meta name="description" content="A simple directory of restaurants, cafés, bakeries and sweet shops in Chennai. Find a place by name, neighbourhood or food.">
+    <meta property="og:title" content="madras — Food in Chennai">
+    <meta property="og:description" content="A small, growing directory of Chennai's food establishments.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://madras.arvindamirtaa.workers.dev/">
+    <link rel="icon" href="./favicon.svg" type="image/svg+xml">
+    <link rel="preload" href="./assets/beach-waves.jpg" as="image">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./styles.css">
+    <script src="./app.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#directory">Skip to directory</a>
+    <div class="page">
+      <header class="site-header">
+        <a class="wordmark" href="./" aria-label="madras home"><span class="wordmark-text">madras</span><span class="wordmark-dot" aria-hidden="true">.</span></a>
+        <span class="city-label">Chennai, Tamil Nadu</span>
+      </header>
+
+      <main>
+        <section class="intro" aria-labelledby="page-title">
+          <p class="eyebrow">The food directory</p>
+          <h1 id="page-title">Food in Chennai.</h1>
+          <p class="intro-copy">Restaurants, cafés, bakeries and sweet shops.<br>Find a place for your next meal.</p>
+        </section>
+
+        <section id="directory" aria-label="Food directory">
+          <form class="search-form" role="search">
+            <div class="search-field">
+              <label for="search">Search the directory</label>
+              <input id="search" type="search" placeholder="Name, area or food" autocomplete="off" disabled>
+            </div>
+            <div class="area-field">
+              <label for="area">Area</label>
+              <select id="area" disabled>
+                <option value="">All areas</option>
+              </select>
+            </div>
+          </form>
+
+          <fieldset class="categories">
+            <legend class="visually-hidden">Establishment type</legend>
+            <button type="button" class="category" data-category="" aria-pressed="true" disabled>All places</button>
+            <button type="button" class="category" data-category="Restaurant" aria-pressed="false" disabled>Restaurants</button>
+            <button type="button" class="category" data-category="Café" aria-pressed="false" disabled>Cafés</button>
+            <button type="button" class="category" data-category="Sweets & bakery" aria-pressed="false" disabled>Sweets & bakeries</button>
+          </fieldset>
+
+          <div class="results-bar">
+            <p id="result-count" role="status" aria-live="polite" aria-atomic="true">Loading places…</p>
+            <button id="clear-filters" class="text-button" type="button" hidden>Clear filters</button>
+          </div>
+
+          <div id="loading-list" class="loading-list" aria-hidden="true">
+            <div class="loading-place"></div>
+            <div class="loading-place"></div>
+            <div class="loading-place"></div>
+          </div>
+          <div id="load-error" class="empty-state" role="alert" hidden>
+            <h2>The directory could not load.</h2>
+            <p>Please try again.</p>
+            <button id="retry-load" class="reset-button" type="button">Retry loading</button>
+          </div>
+          <ul id="places" class="places" aria-label="Establishments" hidden></ul>
+          <div id="empty-state" class="empty-state" hidden>
+            <h2>No places found.</h2>
+            <p>Try another search or clear your filters.</p>
+            <button id="reset-search" class="reset-button" type="button">Show all places</button>
+          </div>
+          <noscript>
+            <p>Enable JavaScript to browse and search this directory, or <a href="https://github.com/arvindamirtaa/madras/blob/main/migrations/0001_places.sql">read the initial list on GitHub</a>.</p>
+          </noscript>
+        </section>
+      </main>
+
+      <footer class="site-footer">
+        <div>
+          <p>A small, growing list.</p>
+          <p class="footer-note">Visit establishment websites for current menus and hours.</p>
+          <p class="photo-credit">Logo photo: <a href="https://unsplash.com/photos/aerial-view-of-waves-crashing-on-a-sandy-beach-zWFa7mlQAYk" target="_blank" rel="noopener noreferrer">Hameen Reynolds on Unsplash</a>.</p>
+        </div>
+        <a href="https://github.com/arvindamirtaa/madras/issues/new?title=Suggest%20a%20place&amp;body=Name%3A%0AArea%3A%0AAddress%3A%0AWi-Fi%20%28yes%2Fno%2Funknown%29%3A%0APower%20sockets%20%28yes%2Fno%2Funknown%29%3A%0AWork%20friendliness%3A%0AWebsite%20or%20source%3A" target="_blank" rel="noopener noreferrer">Suggest a place <span aria-hidden="true">↗</span></a>
+      </footer>
+    </div>
+  </body>
+</html>

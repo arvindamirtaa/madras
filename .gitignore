@@ -5,3 +5,7 @@ node_modules/
 .venv/
 __pycache__/
 *.log
+.wrangler/
+.dev.vars
+.dev.vars.*
+worker-configuration.d.ts
